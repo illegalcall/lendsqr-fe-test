@@ -1,0 +1,98 @@
+@use 'styles/colors.scss' as c;
+@use 'styles/variables.scss' as v;
+@use 'styles/mixins.scss' as m;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: v.$margin-3;
+  margin: v.$margin-21;
+}
+
+.logo-header {
+  display: flex;
+  flex-direction: row;
+  gap: v.$margin-3;
+}
+
+.right-section {
+  width: 100%;
+  max-width: 447px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: v.$margin-13;
+  margin: v.$margin-21;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  gap: v.$margin-6;
+  input {
+    height: 40px;
+    border-radius: v.$border-radius-1;
+    border: 1px solid c.$gray-input;
+    padding: 0 v.$padding-3;
+
+    font-weight: 400;
+    font-size: v.$font-size-xs;
+    line-height: 19px;
+
+    color: c.$gray-input;
+  }
+  &__password {
+    position: relative;
+    > input {
+      width: 100%;
+    }
+    span {
+      position: absolute;
+      right: 13px;
+      top: 13px;
+      cursor: pointer;
+      color: c.$primary;
+    }
+  }
+}
+
+.login-header-title {
+  color: c.$blue-dark;
+  font-weight: 700;
+  font-size: v.$font-size-5xl;
+  line-height: 55px;
+}
+
+.login-header-subtitle {
+  font-size: v.$font-size-lg;
+  line-height: 27px;
+  color: #545f7d;
+}
+
+.show {
+  position: absolute;
+
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: v.$font-size-3xs;
+}
+
+.forgot-password {
+  color: c.$primary;
+  font-weight: 600;
+  font-size: v.$font-size-xxs;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.login-btn {
+  letter-spacing: 0.1rem;
+}

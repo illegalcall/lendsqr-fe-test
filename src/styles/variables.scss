@@ -1,0 +1,124 @@
+// FONT
+@font-face {
+  font-family: AvenirNext;
+  src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+}
+$avenir: AvenirNext, sans-serif;
+
+// LAYOUT DESKTOP VARIABLES
+$header-height: 80px;
+$sidebar-width: 310px;
+$sidebar-minimized-width: 80px;
+$sidebar-width-larger: 380px;
+
+// LAYOUT TABLET VARIABLES
+$header-tablet-height: 140px;
+$sidebar-tablet-width: 50px;
+$lateral-tablet-padding: 10%;
+
+// LAYOUT PHONE VARIABLES
+$header-phone-height: 100px;
+$sidebar-phone-width: 50px;
+$lateral-phone-padding: 5%;
+
+// MIN-WIDTH BREAKPOINTS
+$min-breakpoint-xs: 0;
+$min-breakpoint-sm: 576px;
+$min-breakpoint-md: 768px;
+$min-breakpoint-lg: 992px;
+$min-breakpoint-xl: 1200px;
+$min-breakpoint-xxl: 1600px;
+
+// MAX-WIDTH BREAKPOINTS
+$max-breakpoint-xs: 0;
+$max-breakpoint-sm: 575px;
+$max-breakpoint-md: 767px;
+$max-breakpoint-lg: 991px;
+$max-breakpoint-xl: 1199px;
+$max-breakpoint-xxl: 1599px;
+
+// BORDERS
+$border-radius-1: 5px;
+$border-radius-2: 8px;
+$border-radius-3: 15px;
+$border-radius-4: 20px;
+$border-radius-5: 30px;
+$border-radius-6: 45px;
+$border-radius-7: 70px;
+$border-radius-full: 9999px;
+
+// FONTS
+$font-size-3xs: 10px;
+$font-size-xxs: 12px;
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 27px;
+$font-size-3xl: 30px;
+$font-size-4xl: 35px;
+$font-size-5xl: 40px;
+$font-size-6xl: 65px;
+$font-size-7xl: 75px;
+$font-size-8xl: 80px;
+$font-size-9xl: 100px;
+
+//PADDING
+$padding-1: 5px;
+$padding-2: 8px;
+$padding-3: 10px;
+$padding-4: 12px;
+$padding-5: 15px;
+$padding-6: 18px;
+$padding-7: 20px;
+$padding-8: 22px;
+$padding-9: 25px;
+$padding-10: 30px;
+$padding-11: 35px;
+$padding-12: 40px;
+$padding-13: 45px;
+$padding-14: 50px;
+$padding-15: 55px;
+$padding-16: 60px;
+$padding-17: 65px;
+$padding-18: 120px;
+
+//MARGIN
+$margin-1: 5px;
+$margin-2: 8px;
+$margin-3: 10px;
+$margin-4: 15px;
+$margin-5: 20px;
+$margin-6: 25px;
+$margin-7: 30px;
+$margin-8: 35px;
+$margin-9: 40px;
+$margin-10: 45px;
+$margin-11: 50px;
+$margin-12: 55px;
+$margin-13: 60px;
+$margin-14: 65px;
+$margin-15: 70px;
+$margin-16: 75px;
+$margin-17: 80px;
+$margin-18: 85px;
+$margin-19: 90px;
+$margin-20: 95px;
+$margin-21: 100px;
+
+// TRANSITION SPEEDS
+$transition-speed-1: 0.25s;
+
+// SHADOWS
+$box-shadow-1: 0px 1px 3px rgba(16, 24, 40, 0.1),
+  0px 1px 2px rgba(16, 24, 40, 0.06);
+$box-shadow-2: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+  0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+
+// LAYERS
+$layer-1: 1;
+$layer-2: 2;
+$layer-3: 3;
+$layer-4: 4;
+$layer-5: 5;
