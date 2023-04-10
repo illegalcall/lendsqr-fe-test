@@ -5,7 +5,7 @@ import lendsqrLogoName from '@/assets/lendsqrLogoName.svg';
 import searchIcon from '@/assets/searchIcon.svg';
 import { Button } from '@/shared/atoms';
 import userProfile from '@/assets/userProfile.svg';
-import downChevron from '@/assets/downChevron.svg';
+import downTriangle from '@/assets/downTriangle.svg';
 import notificationIcon from '@/assets/notificationIcon.svg';
 
 const Header = () => {
@@ -30,7 +30,7 @@ const Header = () => {
             alt={'user-profile-picture'}
           />
           <div className={styles['user-profile__name']}>Adedeji</div>
-          <Image src={downChevron} alt={'dropdown-open-icon'} />
+          <Image src={downTriangle} alt={'dropdown-open-icon'} />
         </div>
       </div>
     </div>
