@@ -3,7 +3,21 @@
   font-family: AvenirNext;
   src: url('./fonts/AvenirNextLTPro-Regular.otf') format('opentype');
 }
+@font-face {
+  font-family: Roboto;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+    format('opentype');
+}
+
+@font-face {
+  font-family: WorkSans;
+  src: url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap')
+    format('opentype');
+}
+
 $avenir: AvenirNext, sans-serif;
+$roboto: Roboto, sans-serif;
+$work-sans: WorkSans, sans-serif;
 
 // LAYOUT DESKTOP VARIABLES
 $header-height: 80px;

@@ -1,0 +1,72 @@
+@use 'styles/colors.scss' as c;
+@use 'styles/variables.scss' as v;
+@use 'styles/mixins.scss' as m;
+
+.container {
+  width: 100%;
+  padding: v.$padding-11 v.$padding-10;
+  display: grid;
+  grid-template-columns: 1.5fr 4fr 1fr;
+  align-items: center;
+}
+
+.input {
+  position: relative;
+  display: flex;
+
+  input {
+    border-radius: v.$border-radius-1;
+    border: 1px solid c.$gray-input;
+    padding: 0 v.$padding-3;
+
+    font-weight: 400;
+    font-size: v.$font-size-xs;
+    line-height: 19px;
+
+    color: c.$gray-input;
+    width: 400px;
+    height: 40px;
+  }
+
+  button {
+    border-radius: 0px 10px 10px 0px;
+    padding: v.$padding-4 v.$padding-7;
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.user-profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: v.$margin-10;
+  color: c.$blue-dark;
+
+  > div {
+    cursor: pointer;
+  }
+
+  .docs {
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: v.$roboto;
+  }
+
+  .user-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: v.$work-sans;
+
+    gap: 10px;
+    &__image {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './Button.module.scss';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  children: ReactNode;
   fullWidth?: boolean;
   theme?: 'primary' | 'secondary' | 'transparent';
   loading?: boolean;
@@ -14,7 +14,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = React.forwardRef<HTMLButtonElement | null, Props>(
   (
     {
-      text,
+      children,
       theme = 'primary',
       fullWidth = false,
       loading,
@@ -38,7 +38,7 @@ const Button = React.forwardRef<HTMLButtonElement | null, Props>(
         disabled={disabled}
         {...rest}
       >
-        <p className={styles[`text-${theme}`]}>{text}</p>
+        <p className={styles[`text-${theme}`]}>{children}</p>
       </button>
     );
   }
