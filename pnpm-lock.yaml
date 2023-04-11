@@ -10,6 +10,7 @@ specifiers:
   next: 13.1.1
   react: 18.2.0
   react-dom: 18.2.0
+  react-hook-form: ^7.43.9
   sass: ^1.60.0
   sass-loader: ^13.2.2
   typescript: 5.0.3
@@ -24,6 +25,7 @@ dependencies:
   next: 13.1.1_5y7qh6ykubtj2qr2evk3di7hpa
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-hook-form: 7.43.9_react@18.2.0
   sass-loader: 13.2.2_sass@1.60.0
   typescript: 5.0.3
 
@@ -1861,6 +1863,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-hook-form/7.43.9_react@18.2.0:
+    resolution: {integrity: sha512-AUDN3Pz2NSeoxQ7Hs6OhQhDr6gtF9YRuutGDwPQqhSUAHJSgGl2VeY3qN19MG0SucpjgDiuMJ4iC5T5uB+eaNQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

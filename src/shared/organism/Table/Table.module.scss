@@ -1,0 +1,90 @@
+@use 'styles/colors.scss' as c;
+@use 'styles/variables.scss' as v;
+@use 'styles/mixins.scss' as m;
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  .header-container {
+    margin-bottom: 20px;
+    tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
+    }
+    .header-item {
+      font-family: v.$work-sans;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      display: flex;
+      gap: 10px;
+      text-transform: uppercase;
+
+      color: #545f7d;
+    }
+  }
+  .body-container {
+    position: relative;
+    width: 100%;
+    .body-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
+      font-family: v.$work-sans;
+      font-weight: 400;
+      font-size: 14px;
+      color: #545f7d;
+      padding: 20px 0;
+      border-bottom: 1px solid c.$gray;
+    }
+  }
+  .body-container :last-child {
+    border-bottom: none;
+  }
+}
+
+.tag {
+  color: #39cd62;
+  background-color: #f3fcf6;
+  border-radius: 100px;
+  padding: 7px 16px;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.actions-card {
+  padding: 10px 0 !important;
+  width: 180px;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 5px;
+  > div {
+    margin: 5px;
+  }
+
+  &__item {
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    // border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: c.$gray-2;
+    }
+  }
+}
+
+.org-name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
