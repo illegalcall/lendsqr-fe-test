@@ -1,0 +1,44 @@
+@use 'styles/colors.scss' as c;
+@use 'styles/variables.scss' as v;
+@use 'styles/mixins.scss' as m;
+
+.container {
+  padding: 60px;
+}
+
+.title {
+  font-family: v.$work-sans;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #213f7d;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 26px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  min-height: 160px;
+  font-family: v.$work-sans;
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #545f7d;
+  }
+  &__value {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #213f7d;
+  }
+}
