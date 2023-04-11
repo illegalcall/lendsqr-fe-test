@@ -8,7 +8,7 @@
   gap: v.$margin-9;
   width: 300px;
   height: 100vh;
-  padding: v.$padding-12 v.$padding-10;
+  padding: v.$padding-12 0;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
   font-size: v.$font-size-sm;
 }
@@ -17,6 +17,12 @@
   display: flex;
   align-items: center;
   gap: v.$margin-1;
+  padding: 0 v.$padding-10;
+
+  &-selected {
+    border-left: 4px solid c.$primary;
+    background-color: c.$primary-light-bg;
+  }
 }
 
 .nav-items {
