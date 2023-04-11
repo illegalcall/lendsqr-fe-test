@@ -14,6 +14,7 @@
 }
 
 .item {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: v.$margin-1;

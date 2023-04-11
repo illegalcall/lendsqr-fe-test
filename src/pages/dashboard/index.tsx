@@ -1,11 +1,11 @@
 import { NextPage } from 'next';
-import { Dashboard } from '../pageComponents';
+import { Dashboard, Users } from '@/pageComponents';
 import { Layout } from '@/shared/templates';
 
 const DashboardPage: NextPage = () => {
   return (
     <Layout>
-      <Dashboard />
+      <Users />
     </Layout>
   );
 };

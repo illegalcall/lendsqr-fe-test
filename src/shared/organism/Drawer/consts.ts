@@ -17,9 +17,13 @@ export const navItems: INavItemGroup[] = [
   {
     title: 'Customers',
     items: [
-      { title: 'Users', icon: '/users', path: '/Users' },
-      { title: 'Guarantors', icon: '/guarantors', path: '/guarantors' },
-      { title: 'Loans', icon: '/loans', path: '/Loans' },
+      { title: 'Users', icon: '/users', path: '/dashboard/users' },
+      {
+        title: 'Guarantors',
+        icon: '/guarantors',
+        path: '/dashboard//guarantors',
+      },
+      { title: 'Loans', icon: '/loans', path: '/dashboard//loans' },
       //   {
       //     title: 'Decision Models',
       //     icon: 'Decision Models',

@@ -9,7 +9,7 @@ import selectedRouteIcon from '@/assets/selectedRouteIcon.svg';
 import classNames from 'classnames';
 
 const Drawer = () => {
-  const { checkRouteSelected } = useDrawer();
+  const { checkRouteSelected, handleClick } = useDrawer();
   const getSelectedRouteClassName = (route: string) => {
     return classNames(
       styles['item'],
@@ -33,6 +33,7 @@ const Drawer = () => {
                 <div
                   className={getSelectedRouteClassName(item.path)}
                   key={index}
+                  onClick={() => handleClick(item.path)}
                 >
                   <Image src={item.icon} alt="" width={30} height={30} />
                   <div className={styles['item__text']}>{item.title}</div>
