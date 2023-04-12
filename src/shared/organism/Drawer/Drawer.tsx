@@ -27,7 +27,7 @@ const Drawer = () => {
       <div className={styles['nav-items']}>
         {navItems.map((itemGroup, index) => (
           <div className={styles['group']} key={index}>
-            <div className={styles['group__text']}>{itemGroup.title}</div>
+            <div className={styles['group__title']}>{itemGroup.title}</div>
             <div className={styles['group__items']}>
               {itemGroup.items.map((item, index) => (
                 <div
@@ -35,7 +35,7 @@ const Drawer = () => {
                   key={index}
                   onClick={() => handleClick(item.path)}
                 >
-                  {/* <Image src={item.icon} alt="" width={30} height={30} /> */}
+                  {item.icon}
                   <div className={styles['item__text']}>{item.title}</div>
                 </div>
               ))}
