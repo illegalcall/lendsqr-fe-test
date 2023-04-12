@@ -1,19 +1,18 @@
 import React from 'react';
+
+import { Button } from '@/shared/atoms';
+import { LandingPageLogo, LendsqrLogoName } from '@/assets';
+
 import styles from './Login.module.scss';
-import lendsqrLogo from '@/assets/lendsqrLogo.svg';
-import landingPageLogo from '@/assets/landingPageLogo.svg';
-import { Button } from '../../shared/atoms';
-import Image from 'next/image';
 
 const Login = () => {
   return (
     <div className={styles['container']}>
       <div className={styles['left-section']}>
         <div className={styles['logo-header']}>
-          <Image src={lendsqrLogo} alt="" />
-          <div>lendsqr</div>
+          <LendsqrLogoName />
         </div>
-        <Image src={landingPageLogo} alt="" />
+        <LandingPageLogo />
       </div>
       <div className={styles['right-section']}>
         <div className={styles['login-header']}>
@@ -31,7 +30,9 @@ const Login = () => {
           <a href="#" className={styles['forgot-password']}>
             Forgot Password?
           </a>
-          <Button text={'LOG IN'} fullWidth className={styles['login-btn']} />
+          <Button fullWidth className={styles['login-btn']}>
+            LOG IN
+          </Button>
         </div>
       </div>
     </div>

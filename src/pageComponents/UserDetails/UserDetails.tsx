@@ -5,15 +5,11 @@ import { useRouter } from 'next/router';
 
 import { Button, Card } from '@/shared/atoms';
 
-import leftArrow from '@/assets/leftArrow.svg';
-import avatar from '@/assets/avatar.svg';
-import starFilled from '@/assets/starFilled.svg';
-import starUnfilled from '@/assets/starUnfilled.svg';
-
 import { userDetailTabs } from './consts';
 import { GeneralDetails } from './components';
 
 import styles from './UserDetails.module.scss';
+import { Avatar, LeftArrow, StarFilled, StarUnfilled } from '@/assets';
 
 const UserDetails = () => {
   const router = useRouter();
@@ -77,10 +73,12 @@ const UserDetails = () => {
     id: '1',
   };
 
+  //FIXME: Use actual data
+
   return (
     <div className={styles['container']}>
       <div className={styles['back']} onClick={handleBack}>
-        <Image src={leftArrow} alt="" />
+        <LeftArrow />
         Back to Users
       </div>
       <div className={styles['title-container']}>
@@ -97,7 +95,7 @@ const UserDetails = () => {
       <Card className={styles['user-info-header-card']}>
         <div className={styles['user-info-header']}>
           <div className={styles['user-avatar-container']}>
-            <Image src={avatar} alt="" />
+            <Avatar />
             <div className={styles['user-name-container']}>
               <div className={styles['name']}>Grace Effiom</div>
               <div className={styles['id']}>LSQFf12dasdb</div>
@@ -106,9 +104,9 @@ const UserDetails = () => {
           <div className={styles['user-tier']}>
             <div className="">User{"'"}s Tier</div>
             <div className="">
-              <Image src={starFilled} alt={''} />
-              <Image src={starUnfilled} alt={''} />
-              <Image src={starUnfilled} alt={''} />
+              <StarFilled />
+              <StarUnfilled />
+              <StarUnfilled />
             </div>
           </div>
           <div className={styles['account']}>

@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './Drawer.module.scss';
-import { navItems } from './consts';
-import Image from 'next/image';
-import switchOrgBriefcase from '@/assets/switchOrgBriefcase.svg';
-import downChevron from '@/assets/downChevron.svg';
-import { useDrawer } from './hooks';
-import selectedRouteIcon from '@/assets/selectedRouteIcon.svg';
 import classNames from 'classnames';
+
+import { SwitchOrgBriefcase, DownChevron } from '@/assets/index';
+
+import { navItems } from './consts';
+import { useDrawer } from './hooks';
+
+import styles from './Drawer.module.scss';
 
 const Drawer = () => {
   const { checkRouteSelected, handleClick } = useDrawer();
@@ -20,9 +20,9 @@ const Drawer = () => {
   return (
     <div className={styles['container']}>
       <div className={styles['item']}>
-        <Image src={switchOrgBriefcase} alt="" width={30} height={30} />
+        <SwitchOrgBriefcase />
         <div className={styles['item__text']}>Switch Organisation </div>
-        <Image src={downChevron} alt="" />
+        <DownChevron />
       </div>
       <div className={styles['nav-items']}>
         {navItems.map((itemGroup, index) => (
@@ -35,7 +35,7 @@ const Drawer = () => {
                   key={index}
                   onClick={() => handleClick(item.path)}
                 >
-                  <Image src={item.icon} alt="" width={30} height={30} />
+                  {/* <Image src={item.icon} alt="" width={30} height={30} /> */}
                   <div className={styles['item__text']}>{item.title}</div>
                 </div>
               ))}

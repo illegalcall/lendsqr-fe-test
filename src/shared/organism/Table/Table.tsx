@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 
-import Image from 'next/image';
-import tableFilterIcon from '@/assets/tableFilter.svg';
-import actionOption from '@/assets/actionOption.svg';
-
-import styles from './Table.module.scss';
+import { TableFilter, ActionOption } from '@/assets';
 
 import { Actions } from './components';
 import { useTable } from './hooks';
-import { useRouter } from 'next/router';
 
+import styles from './Table.module.scss';
 interface Props {
   tableHeaders: string[];
   className?: string;
@@ -28,8 +25,7 @@ const Table: React.FC<Props> = ({ tableHeaders, data }) => {
           <tr>
             {tableHeaders.map((header, index) => (
               <th key={index} className={styles['header-item']}>
-                <span>{header}</span>{' '}
-                {header && <Image src={tableFilterIcon} alt={''} />}
+                <span>{header}</span> {header && <TableFilter />}
               </th>
             ))}
           </tr>
@@ -63,9 +59,7 @@ const Table: React.FC<Props> = ({ tableHeaders, data }) => {
               <td
                 className={`${styles['body-item__data']} ${styles['action']}`}
               >
-                <Image
-                  src={actionOption}
-                  alt={''}
+                <ActionOption
                   onClick={() =>
                     isOptionsOpen === index
                       ? setIsOptionsOpen(null)

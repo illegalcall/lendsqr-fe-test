@@ -1,11 +1,8 @@
 import React from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { Card } from '@/shared/atoms';
-import activateUser from '@/assets/Action/activateUser.svg';
-import blacklistUser from '@/assets/Action/blacklistUser.svg';
-import viewEye from '@/assets/Action/viewEye.svg';
+import { ViewEye, BlacklistUser, ActivateUser } from '@/assets';
 
 import styles from './Actions.module.scss';
 
@@ -21,15 +18,15 @@ const Actions: React.FC<Props> = ({ id }) => {
         className={styles['actions-card__item']}
         onClick={() => router.push(`/dashboard/users/${id}`)}
       >
-        <Image src={viewEye} alt={''} />
+        <ViewEye />
         View Details
       </div>
       <div className={styles['actions-card__item']}>
-        <Image src={blacklistUser} alt={''} />
+        <BlacklistUser />
         Blacklist User
       </div>
       <div className={styles['actions-card__item']}>
-        <Image src={activateUser} alt={''} />
+        <ActivateUser />
         Activate User
       </div>
     </Card>
