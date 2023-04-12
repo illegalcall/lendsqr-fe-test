@@ -58,26 +58,6 @@
     background-color: transparent;
   }
 
-  .icon-content {
-    width: min-content;
-    @include m.flex(row, center, center);
-
-    &-primary {
-      @extend .icon-content;
-      color: c.$white;
-    }
-
-    &-secondary {
-      @extend .icon-content;
-      color: c.$black;
-    }
-
-    &-transparent {
-      @extend .icon-content;
-      color: c.$primary-lighter;
-    }
-  }
-
   .text {
     margin: 0;
     padding: 0;

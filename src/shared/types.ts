@@ -33,7 +33,7 @@ interface Education {
   loanRepayment: string;
 }
 
-export interface UsersResponseObject {
+export interface IUsersDetail {
   createdAt: string;
   orgName: string;
   userName: string;
