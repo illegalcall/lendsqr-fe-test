@@ -1,0 +1,61 @@
+@use 'styles/colors.scss' as c;
+@use 'styles/variables.scss' as v;
+@use 'styles/mixins.scss' as m;
+
+.container {
+  z-index: 2;
+  position: absolute;
+  top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: v.$margin-4 + 3;
+  height: 600px;
+  width: 270px;
+
+  padding: v.$padding-9 v.$padding-7;
+
+  font-size: v.$font-size-xs;
+  font-family: v.$work-sans;
+  font-weight: 500;
+
+  input {
+    font-family: v.$work-sans;
+    font-weight: 300;
+  }
+  select {
+    height: 40px;
+  }
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: v.$margin-3;
+
+  label {
+    display: flex;
+    color: c.$grey-text;
+  }
+}
+
+.select {
+  width: 100%;
+  padding: v.$padding-3;
+  border: 1px solid c.$gray-2;
+  border-radius: 8px;
+}
+
+.btn-container {
+  display: flex;
+  gap: v.$margin-3;
+  p {
+    font-family: v.$work-sans;
+    font-size: v.$font-size-xs;
+    font-weight: 600;
+  }
+  .reset {
+    color: c.$grey-text;
+    border: 1px solid c.$grey-text;
+  }
+}

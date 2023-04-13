@@ -7,6 +7,7 @@ import { Actions } from './components';
 import { useTable } from './hooks';
 
 import styles from './Table.module.scss';
+import { Filters } from '@/shared/molecules';
 interface Props {
   tableHeaders: string[];
   className?: string;
@@ -25,7 +26,17 @@ const Table: React.FC<Props> = ({ tableHeaders, data }) => {
           <tr>
             {tableHeaders.map((header, index) => (
               <th key={index} className={styles['header-item']}>
-                <span>{header}</span> {header && <TableFilter />}
+                <span>{header}</span>{' '}
+                {header && (
+                  <TableFilter
+                    onClick={() =>
+                      isFilterOpen === index
+                        ? setIsFilterOpen(null)
+                        : setIsFilterOpen(index)
+                    }
+                  />
+                )}
+                {isFilterOpen === index ? <Filters /> : ''}
               </th>
             ))}
           </tr>

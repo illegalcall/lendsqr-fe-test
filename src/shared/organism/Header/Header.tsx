@@ -27,7 +27,7 @@ const Header = () => {
           <Notification />
         </div>
         <div className={styles['user-profile']}>
-          <UserProfile />
+          <UserProfile className={styles['user-profile__image']} />
           <div className={styles['user-profile__name']}>Adedeji</div>
           <DownTriangle />
         </div>
