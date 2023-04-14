@@ -3,10 +3,16 @@
 @use 'styles/mixins.scss' as m;
 
 .container {
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 100vh;
   width: 100vw;
+  background-color: c.$gray-background;
+  @media screen and (max-width: v.$max-breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .left-section {
@@ -14,6 +20,26 @@
   flex-direction: column;
   gap: v.$margin-3;
   margin: v.$margin-21;
+
+  .landing-page-logo-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    img {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: v.$max-breakpoint-lg) {
+    margin: v.$margin-10;
+  }
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    margin: v.$margin-5;
+  }
+  @media screen and (max-width: v.$max-breakpoint-sm) {
+    display: none;
+  }
 }
 
 .logo-header {
@@ -22,14 +48,34 @@
   gap: v.$margin-3;
 }
 
-.right-section {
+.right-section-container {
+  background-color: c.$white;
   width: 100%;
-  max-width: 447px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: v.$margin-13;
-  margin: v.$margin-21;
+  height: 100%;
+  > div {
+    height: 100%;
+    max-width: 447px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: v.$margin-13;
+  }
+  padding: v.$padding-17;
+
+  .secondary-logo {
+    @media screen and (max-width: v.$max-breakpoint-sm) {
+      display: block;
+      margin: 0 auto;
+    }
+    display: none;
+  }
+
+  @media screen and (max-width: v.$max-breakpoint-lg) {
+    padding: v.$padding-15;
+  }
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    padding: v.$padding-8;
+  }
 }
 
 .login-input {

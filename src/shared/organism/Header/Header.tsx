@@ -1,20 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
 
 import { Button } from '@/shared/atoms';
-import {
-  DownTriangle,
-  LendsqrLogoName,
-  Notification,
-  Search,
-  UserProfile,
-} from '@/assets';
+import { DownTriangle, Notification, Search, UserProfile } from '@/assets';
+import lendsqrNameLogo from '@/assets/images/lendsqr-name-logo.svg';
 
 import styles from './Header.module.scss';
 
 const Header = () => {
   return (
     <div className={styles['container']}>
-      <LendsqrLogoName />
+      <Image src={lendsqrNameLogo} alt="lendsqr" />
       <div className={styles['input']}>
         <input type="text" placeholder="Search for anything" />
         <Button>
