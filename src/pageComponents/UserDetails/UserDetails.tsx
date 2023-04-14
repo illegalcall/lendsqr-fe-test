@@ -53,8 +53,11 @@ const UserDetails = () => {
           <div className={styles['user-avatar-container']}>
             <Avatar />
             <div className={styles['user-name-container']}>
-              <div className={styles['name']}>Grace Effiom</div>
-              <div className={styles['id']}>LSQFf12dasdb</div>
+              <div className={styles['name']}>
+                {userDetails?.profile?.firstName}{' '}
+                {userDetails?.profile?.lastName}
+              </div>
+              <div className={styles['id']}>{userDetails?.profile.bvn}</div>
             </div>
           </div>
           <div className={styles['user-tier']}>
@@ -66,9 +69,11 @@ const UserDetails = () => {
             </div>
           </div>
           <div className={styles['account']}>
-            <div className={styles['account__amount']}>₦200,000.00</div>
+            <div className={styles['account__amount']}>
+              {userDetails?.profile.currency} {userDetails?.accountBalance}
+            </div>
             <div className={styles['account__detail']}>
-              9912345678/Providus Bank
+              {userDetails?.accountNumber}/Providus Bank
             </div>
           </div>
         </div>

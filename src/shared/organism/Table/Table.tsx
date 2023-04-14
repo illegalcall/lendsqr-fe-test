@@ -42,7 +42,7 @@ const Table: React.FC<Props> = ({ tableHeaders, data }) => {
           </tr>
         </thead>
         <tbody className={styles['body-container']}>
-          {data.map((item, index) => (
+          {data?.map((item, index) => (
             <tr key={index} className={styles['body-item']}>
               <td className={styles['body-item__data']}>
                 <span

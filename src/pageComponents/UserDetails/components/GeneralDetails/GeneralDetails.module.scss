@@ -33,6 +33,18 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: v.$margin-7;
+
+  @media screen and (max-width: v.$max-breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: v.$max-breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .detail {

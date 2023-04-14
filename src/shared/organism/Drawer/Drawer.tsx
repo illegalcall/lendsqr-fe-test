@@ -1,14 +1,18 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { SwitchOrgBriefcase, DownChevron } from '@/assets/index';
+import { SwitchOrgBriefcase, DownChevron, Logout } from '@/assets/index';
 
 import { navItems } from './consts';
 import { useDrawer } from './hooks';
 
 import styles from './Drawer.module.scss';
 
-const Drawer = () => {
+interface Props {
+  isDrawerOpen: boolean;
+}
+
+const Drawer: React.FC<Props> = ({ isDrawerOpen }) => {
   const { checkRouteSelected, handleClick } = useDrawer();
   const getSelectedRouteClassName = (route: string) => {
     return classNames(
@@ -18,7 +22,9 @@ const Drawer = () => {
   };
 
   return (
-    <div className={styles['container']}>
+    <div
+      className={`${styles['container']} ${!isDrawerOpen && styles['closed']}`}
+    >
       <div className={styles['item']}>
         <SwitchOrgBriefcase />
         <div className={styles['item__text']}>Switch Organisation </div>
@@ -42,6 +48,11 @@ const Drawer = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className={`${styles['logout']} ${styles['item']}`}>
+        <Logout />
+        <div className={styles['item__text']}>Logout </div>
+        <div className={styles['version']}>v1.2.0</div>
       </div>
     </div>
   );

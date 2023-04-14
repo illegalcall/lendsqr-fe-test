@@ -9,6 +9,13 @@
 
   padding: v.$padding-16;
   font-family: v.$work-sans;
+
+  @media screen and (max-width: v.$max-breakpoint-lg) {
+    padding: v.$padding-10;
+  }
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    padding: v.$padding-8;
+  }
 }
 
 .back {
@@ -37,6 +44,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    flex-direction: column;
+    gap: v.$margin-4;
+  }
 }
 
 .btn-container {
@@ -44,6 +56,11 @@
   gap: v.$margin-3;
   button {
     padding: v.$padding-4 v.$padding-8;
+    @media screen and (max-width: v.$max-breakpoint-md) {
+      // flex-direction: column;
+      padding: v.$padding-3 v.$padding-6;
+      gap: v.$margin-4;
+    }
   }
   > button > p {
     text-transform: uppercase;
@@ -63,6 +80,10 @@
     border: 1px solid c.$primary;
     color: c.$primary;
   }
+
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    gap: v.$margin-4;
+  }
 }
 
 .user-info-header-card {
@@ -76,6 +97,7 @@
 
 .user-info-header {
   display: flex;
+
   > div {
     padding: 0 v.$padding-10;
     border-right: 1px solid c.$gray;
@@ -144,12 +166,22 @@
       color: c.$blue-dark;
     }
   }
+
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    flex-direction: column;
+    gap: v.$margin-9;
+
+    > div {
+      border: 0;
+    }
+  }
 }
 
 .tabs-container {
   display: flex;
   justify-content: space-between;
   padding-left: v.$padding-10;
+  overflow-x: auto;
 
   .tab {
     cursor: pointer;
@@ -166,5 +198,9 @@
       color: c.$primary;
       border-bottom: 2px solid c.$primary;
     }
+  }
+
+  @media screen and (max-width: v.$max-breakpoint-md) {
+    padding-left: 10px;
   }
 }

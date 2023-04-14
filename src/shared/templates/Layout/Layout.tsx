@@ -9,11 +9,15 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
   return (
     <div className={styles['container']}>
-      <Header />
+      <Header isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
       <div className={styles['children-sidebar-container']}>
-        <Drawer />
+        <Drawer isDrawerOpen={isDrawerOpen} />
         <div className={styles['children']}>{children}</div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/shared/atoms';
 import loginIllus from '@/assets/images/login-illus.svg';
 import lendsqrNameLogo from '@/assets/images/lendsqr-name-logo.svg';
-// import login from '@/pages/api/auth/login';
+
 import Image from 'next/image';
 
 import styles from './Login.module.scss';
