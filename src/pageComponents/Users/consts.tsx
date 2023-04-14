@@ -25,3 +25,13 @@ export const userDashboardCardsData = [
     value: new Intl.NumberFormat('en-US').format(102453),
   },
 ];
+
+export const tableHeaders = [
+  'Organization',
+  'Username',
+  'Email',
+  'Phone number',
+  'Date joined',
+  'Status',
+  '',
+];

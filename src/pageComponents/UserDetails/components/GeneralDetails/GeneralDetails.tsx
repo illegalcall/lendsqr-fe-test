@@ -4,7 +4,7 @@ import styles from './GeneralDetails.module.scss';
 import { IUsersDetail } from '@/shared/types';
 
 interface Props {
-  data: IUsersDetail;
+  data: IUsersDetail | undefined;
 }
 
 const Detail = ({ label, value }: { label: string; value: string }) => {
@@ -32,6 +32,7 @@ const Section = ({
 };
 
 const GeneralDetails: React.FC<Props> = ({ data }) => {
+  if (!data) return null;
   return (
     <Card className={styles['container']}>
       <Section title="Personal Information">
