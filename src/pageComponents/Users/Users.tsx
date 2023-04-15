@@ -12,7 +12,7 @@ import axios from 'axios';
 import { useUsers } from './hooks';
 
 const Users = () => {
-  const { users } = useUsers();
+  const { users, isLoading } = useUsers();
 
   return (
     <div className={styles['container']}>
@@ -26,9 +26,15 @@ const Users = () => {
           </Card>
         ))}
       </div>
-      <Card>
-        <Table tableHeaders={tableHeaders} data={users} />
-      </Card>
+
+      <Table
+        tableHeaders={tableHeaders}
+        data={users}
+        pagination={{
+          itemsPerPage: 9,
+        }}
+        loading={isLoading}
+      />
     </div>
   );
 };

@@ -20,7 +20,9 @@ export const useUsers = () => {
       setUsers(data.data.users);
     },
   });
+  console.log('🚀 ~ file: hooks.ts:23 ~ useUsers ~ isLoading:', isLoading);
   return {
     users,
+    isLoading,
   };
 };

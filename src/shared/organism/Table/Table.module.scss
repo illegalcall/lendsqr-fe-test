@@ -89,3 +89,61 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.users-paginate {
+  display: flex;
+  justify-content: space-between;
+  margin-top: v.$margin-5 + 3;
+  color: c.$grey-text;
+  font-size: v.$font-size-xs;
+
+  @media screen and (max-width: v.$max-breakpoint-sm) {
+    flex-direction: column;
+    gap: v.$margin-5;
+    align-items: center;
+  }
+
+  .user-page-info {
+    span {
+      padding: 7px 10px;
+      color: c.$grey-text;
+      font-weight: 500;
+      background-color: rgba(33, 63, 125, 0.1);
+      border-radius: v.$border-radius-1;
+      img {
+        margin-left: v.$margin-3;
+      }
+    }
+  }
+
+  .pagination {
+    font-size: v.$font-size-sm;
+    display: flex;
+    align-items: center;
+    gap: v.$margin-5;
+    list-style: none;
+
+    color: c.$grey-text-light;
+    .active {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+
+      color: c.$grey-text;
+      opacity: 1;
+    }
+    .page-link {
+      cursor: pointer;
+    }
+    .arrow {
+      cursor: pointer;
+      height: 24px;
+      width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(33, 63, 125, 0.1);
+      border-radius: 4px;
+    }
+  }
+}
