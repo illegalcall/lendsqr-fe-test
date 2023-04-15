@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { Dashboard, Users } from '@/pageComponents';
+import { Users } from '@/pageComponents';
 import { Layout } from '@/shared/templates';
 
 const DashboardPage: NextPage = () => {
