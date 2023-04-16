@@ -23,14 +23,21 @@ export const useUsers = () => {
   const dbPromise = initDb();
 
   async function saveUsers(users: IUsersDetail[]) {
-    const db = await dbPromise;
-    const tx = db.transaction('users', 'readwrite');
-    const store = tx.objectStore('users');
-    await store.clear();
-    await Promise.all(users.map((user) => store.put(user)));
-    await tx.done;
-    // set the current time in localstorage to be used to check if the cache is stale
-    localStorage.setItem('users-last-updated', new Date().getTime().toString());
+    try {
+      const db = await dbPromise;
+      const tx = db.transaction('users', 'readwrite');
+      const store = tx.objectStore('users');
+      await store.clear();
+      await Promise.all(users.map((user) => store.put(user)));
+      await tx.done;
+      // set the current time in localstorage to be used to check if the cache is stale
+      localStorage.setItem(
+        'users-last-updated',
+        new Date().getTime().toString()
+      );
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   async function loadUsers() {
@@ -50,7 +57,6 @@ export const useUsers = () => {
       lastUpdated &&
       new Date().getTime() - parseInt(lastUpdated) > CACHE_INVALIDATION_TIME
     ) {
-      console.log('hi');
       const data = await axios.get('http://localhost:3000/api/users', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
