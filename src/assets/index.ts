@@ -41,3 +41,5 @@ export * from './UserCross';
 export * from './UserSavings';
 export * from './UsersMultiple';
 export * from './ViewEye';
+export * from './Prev';
+export * from './Next';
