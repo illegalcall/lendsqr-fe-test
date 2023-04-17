@@ -10,6 +10,7 @@ import styles from './Login.module.scss';
 import axios, { AxiosError } from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
 import { useRouter } from 'next/router';
+import { APIService } from '@/service';
 
 const Login = () => {
   const queryClient = useQueryClient();
@@ -19,11 +20,11 @@ const Login = () => {
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
-    console.log('hi here');
-    return await axios.post('http://localhost:3000/api/auth/login', {
-      email: e.target.email.value,
-      password: e.target.password.value,
-    });
+    const apiService = new APIService();
+    return await apiService.login(
+      e.target.email.value,
+      e.target.password.value
+    );
   };
 
   const toggleShowPassword = () => {
@@ -40,7 +41,7 @@ const Login = () => {
   //write a react query mutation which will call the login api and send email.value, password.value as payload
   const { mutate } = useMutation(handleLogin, {
     onSuccess: (data) => {
-      localStorage.setItem('token', data.data.token);
+      localStorage.setItem('token', data.token);
       queryClient.invalidateQueries('users');
       router.push('/dashboard');
     },

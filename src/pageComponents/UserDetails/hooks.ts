@@ -5,6 +5,9 @@ import { useState } from 'react';
 import { useQuery, useQueryClient } from 'react-query';
 
 import { openDB } from 'idb';
+import { APIService } from '@/service';
+
+const CACHE_INVALIDATION_TIME = 1000 * 60; // 1 minute
 
 export const useUserDetails = () => {
   const router = useRouter();
@@ -23,7 +26,9 @@ export const useUserDetails = () => {
 
   const dbPromise = initDb();
 
-  async function saveUserDetails(userDetail: IUsersDetail) {
+  async function saveUserDetails(userDetail: IUsersDetail | undefined) {
+    if (!userDetail) return;
+
     const db = await dbPromise;
     const tx = db.transaction('userDetails', 'readwrite');
     const store = tx.objectStore('userDetails');
@@ -32,15 +37,16 @@ export const useUserDetails = () => {
 
     await tx.done;
 
+    // make a hashmap of userid with timestamp in local storage, so that we can check if the cache is stale
     const users = localStorage.getItem('users');
     if (users) {
-      const usersArray = JSON.parse(users);
-      if (!usersArray.includes(userDetail.id)) {
-        usersArray.push(userDetail.id);
-        localStorage.setItem('users', JSON.stringify(usersArray));
-      }
+      const usersObject = JSON.parse(users);
+      usersObject[userDetail.id] = new Date().getTime();
+      localStorage.setItem('users', JSON.stringify(usersObject));
     } else {
-      localStorage.setItem('users', JSON.stringify([userDetail.id]));
+      const usersObject: any = {};
+      usersObject[userDetail.id] = new Date().getTime();
+      localStorage.setItem('users', JSON.stringify(usersObject));
     }
   }
 
@@ -54,34 +60,62 @@ export const useUserDetails = () => {
     return userDetail;
   }
 
-  const fetchUserDetails = async () => {
-    // check if the userDetail is in the cache
+  const checkUserIdInCache = async () => {
     const users = localStorage.getItem('users');
     if (users) {
-      const usersArray = JSON.parse(users);
-      if (usersArray.includes(userId)) {
-        const userDetail = await loadUserDetails(userId);
-        return { data: { user: userDetail } };
+      const usersObject = JSON.parse(users);
+      if (usersObject[userId]) {
+        return true;
       }
     }
+    return false;
+  };
 
-    const data = await axios.get(`http://localhost:3000/api/users/${userId}`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-    });
+  const checkUserDetailStale = async () => {
+    const users = localStorage.getItem('users');
+    if (users) {
+      const usersObject = JSON.parse(users);
+      if (usersObject[userId]) {
+        if (
+          new Date().getTime() - usersObject[userId] <
+          CACHE_INVALIDATION_TIME
+        ) {
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
+  const fetchUserDetails = async () => {
+    const apiService = new APIService();
+    let data: {
+      user: IUsersDetail | undefined;
+    } = {
+      user: undefined,
+    };
+    const isUserIdInCache = await checkUserIdInCache();
+    const isUserDetailStale = await checkUserDetailStale();
+
+    if (isUserIdInCache && !isUserDetailStale) {
+      data.user = await loadUserDetails(userId);
+    } else {
+      data = await apiService.getUserDetails(userId);
+      await saveUserDetails(data.user);
+    }
+
     return data;
   };
 
   const { isLoading, data } = useQuery('userDetail', fetchUserDetails, {
     onSuccess: async (data) => {
-      console.log(data);
-      await saveUserDetails(data.data.user);
-      setUserDetails(data.data.user);
+      await saveUserDetails(data.user);
+      setUserDetails(data.user);
     },
   });
 
   return {
     userDetails,
+    isLoading,
   };
 };

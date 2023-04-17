@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
+import { ADMIN_EMAIL, ADMIN_PASSWORD, JWT_SECRET } from '@/consts';
 
 type Response = {
   token?: string;
@@ -26,8 +27,8 @@ export default function login(
       const { email, password } = req.body;
       console.log('first', email, password);
 
-      if (email === 'admin@lendsqr.com' && password === 'password1234') {
-        token = jwt.sign({ email }, 'mysecret');
+      if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+        token = jwt.sign({ email }, JWT_SECRET as string);
       } else {
         return res.status(401).json({ err: 'wrong email or password.' });
       }

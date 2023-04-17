@@ -3,7 +3,7 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
 
-import { Button, Card } from '@/shared/atoms';
+import { Button, Card, Loader } from '@/shared/atoms';
 
 import { userDetailTabs } from './consts';
 import { GeneralDetails } from './components';
@@ -29,7 +29,9 @@ const UserDetails = () => {
     setActiveTab(route);
   };
 
-  const { userDetails } = useUserDetails();
+  const { userDetails, isLoading } = useUserDetails();
+
+  if (isLoading) return <Loader />;
 
   return (
     <div className={styles['container']}>
