@@ -4,6 +4,7 @@
 
 .container {
   overflow-x: auto;
+  max-width: 1160px;
 }
 
 .table {
@@ -14,22 +15,55 @@
   position: relative;
   overflow-x: auto;
 
-  th {
-    word-wrap: break-word;
-  }
-  td {
-    word-wrap: break-word;
+  tr {
+    width: 10%;
+    position: relative;
   }
 
+  th {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 180px;
+    text-overflow: ellipsis;
+  }
+
+  th:last-child {
+    width: 20px !important;
+    min-width: 20px;
+  }
+  td {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 180px;
+    text-overflow: ellipsis;
+  }
+  td:last-child {
+    width: 20px !important;
+    min-width: 20px;
+  }
+
+  // @media screen and (max-width: 1550px) {
+  //   th {
+  //     max-width: 120px;
+  //   }
+
+  //   td {
+  //     max-width: 120px;
+  //   }
+  // }
+  // last child of th and td has min-width: 20px
+  // to avoid the table from overflowing
+
   tr {
-    min-width: 900px;
+    min-width: 1070px;
   }
 
   .header-container {
     margin-bottom: 20px;
     tr {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
+      display: flex;
     }
     .header-item {
       font-family: v.$work-sans;
@@ -47,9 +81,10 @@
     position: relative;
     width: 100%;
     .body-item {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
+      width: fit-content;
+      display: flex;
+      gap: v.$margin-3;
+
       font-family: v.$work-sans;
       font-weight: 400;
       font-size: v.$font-size-xs;
@@ -63,6 +98,11 @@
   }
 }
 
+.status {
+  display: flex;
+  justify-content: center;
+}
+
 .tag {
   color: c.$success;
   background-color: c.$success-bg;
@@ -72,6 +112,7 @@
 
 .action {
   cursor: pointer;
+  position: relative;
 }
 
 .actions-card {
@@ -101,12 +142,17 @@
   }
 }
 
+.action-option {
+}
+
 .org-name:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
 .users-paginate {
+  max-width: 1160px;
+
   display: flex;
   justify-content: space-between;
   margin-top: v.$margin-5 + 3;
@@ -155,9 +201,7 @@
       cursor: pointer;
       height: 24px;
       width: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
       background: rgba(33, 63, 125, 0.1);
       border-radius: 4px;
     }

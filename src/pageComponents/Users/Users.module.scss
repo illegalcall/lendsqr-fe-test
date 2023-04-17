@@ -27,6 +27,7 @@
 .cards-container {
   display: flex;
   gap: 26px;
+  max-width: 1160px;
   @media screen and (max-width: v.$max-breakpoint-md) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
