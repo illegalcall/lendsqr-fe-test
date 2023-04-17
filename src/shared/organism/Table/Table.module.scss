@@ -64,6 +64,10 @@
     margin-bottom: 20px;
     tr {
       display: flex;
+      th:nth-last-child(2) {
+        display: flex;
+        justify-content: center;
+      }
     }
     .header-item {
       font-family: v.$work-sans;
