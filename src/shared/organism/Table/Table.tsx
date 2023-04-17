@@ -65,19 +65,10 @@ const Table: React.FC<Props> = ({
               ))}
             </tr>
           </thead>
-          <tbody style={{ width: '100%' }} className={styles['body-container']}>
+          <tbody className={styles['body-container']}>
             {currentItems?.map((item, index) => (
-              <tr
-                // style={{ width: '10%', position: "relative" }}
-                key={index}
-                className={styles['body-item']}
-              >
-                <td
-                  // style={{
-                  //   width: '50%',
-                  // }}
-                  className={styles['body-item__data']}
-                >
+              <tr key={index} className={styles['body-item']}>
+                <td className={styles['body-item__data']}>
                   <span
                     className={styles['org-name']}
                     onClick={() => router.push(`/dashboard/users/${item.id}`)}
