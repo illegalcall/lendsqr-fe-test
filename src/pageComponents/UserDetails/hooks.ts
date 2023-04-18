@@ -16,7 +16,7 @@ export const useUserDetails = () => {
   const userId = router.query.id as string;
 
   const initDb = async () => {
-    const db = await openDB('lendsqr-fe-test-1', 1, {
+    const db = await openDB('lendsqr-fe-test-userDetails', 1, {
       upgrade(db) {
         db.createObjectStore('userDetails', { keyPath: 'id' });
       },

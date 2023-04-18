@@ -13,7 +13,7 @@ export const useUsers = () => {
   const queryClient = useQueryClient();
 
   const initDb = async () => {
-    const db = await openDB('lendsqr-fe-test', 1, {
+    const db = await openDB('lendsqr-fe-test-allUsers', 1, {
       upgrade(db) {
         db.createObjectStore('users', { keyPath: 'id' });
       },

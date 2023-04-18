@@ -19,7 +19,6 @@ export default async function getUserById(
       if (req.headers.authorization) {
         token = req.headers.authorization.split(' ')[1];
         if (!token) {
-          console.log(token, token);
           return res
             .status(401)
             .json({ err: 'please send bearer token to access the api' });

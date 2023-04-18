@@ -25,7 +25,6 @@ export default function login(
     if (req.method === 'POST') {
       let token = '';
       const { email, password } = req.body;
-      console.log('first', email, password);
 
       if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
         token = jwt.sign({ email }, JWT_SECRET as string);

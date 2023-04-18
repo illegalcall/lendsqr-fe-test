@@ -7,7 +7,6 @@ export const useDrawer = () => {
   };
 
   const handleClick = (path: string) => {
-    console.log('🚀 ~ file: hooks.ts:10 ~ handleClick ~ path:', path);
     router.push(path);
   };
 
