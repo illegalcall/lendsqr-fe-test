@@ -9,4 +9,4 @@ export const JWT_SECRET =
 export const ADMIN_EMAIL =
   NODE_ENV === 'development' ? 'admin@lendsqr.com' : process.env.ADMIN_EMAIL;
 export const ADMIN_PASSWORD =
-  NODE_ENV === 'development' ? 'password1234' : process.env.PASSWORD;
+  NODE_ENV === 'development' ? 'password1234' : process.env.ADMIN_PASSWORD;
