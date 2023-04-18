@@ -41,13 +41,13 @@ const Login = () => {
   //write a react query mutation which will call the login api and send email.value, password.value as payload
   const { mutate } = useMutation(handleLogin, {
     onSuccess: (data) => {
+      if (data.err) {
+        setError(data.err);
+        return;
+      }
       localStorage.setItem('token', data.token);
       queryClient.invalidateQueries('users');
       router.push('/dashboard');
-    },
-    onError: (error: AxiosError) => {
-      console.log(error);
-      setError((error?.response?.data as any).err);
     },
   });
 
