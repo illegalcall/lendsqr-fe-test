@@ -56,19 +56,17 @@ The user details will also be stored indexedDB in a separate collection, and inv
 
 
 ## Structure of the app
+
+In the src folder, you will find
+
 - [Assets](./src/assets/README.md)
 - [Consts](./src/consts/README.md)
 - [Page Components](./src/pageComponents/README.md)
 - [Service](./src/service/README.md)
 - [Shared](./src/shared/README.md)
 - [Styles](./src/styles/README.md)
-
-## Known Issues and Limitations
-
-As with any project, there may be some limitations or known issues that you should be aware of. At the moment, none have been reported. If you encounter any issues while working on the project, please feel free to report them.
-
+- Page: This contains nextjs pages and the api folder which contains some api routes.
 
 ## Additional Information
 
-If you have any additional questions or concerns about the project, please feel free to reach out to the project maintainers.
-
+The choice of Nextjs as a React framework was used given the nature of the app, it could greatly benefit with search engine optimization from the server-side rendering feature which Next js provides out of the box.
