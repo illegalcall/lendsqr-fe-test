@@ -2,6 +2,8 @@
 
 This project uses the Atomic Design methodology to organize its shared components. Atomic Design is a methodology that helps designers and developers to create consistent, reusable, and modular design systems.
 
+Storybook has been used with the atoms for efficient development and documentation when working with a team.
+
 ## Atoms
 
 Atoms are the building blocks of our design system. They are the smallest, most basic components that cannot be broken down any further. Here are the atoms used in this project:
