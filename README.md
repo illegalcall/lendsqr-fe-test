@@ -50,11 +50,6 @@ This is a front-end assignment where you are required to build 4 pages - Login, 
 </div>
 
 <div style="display:flex; align-items:center">
-  <img src="https://jestjs.io/img/jest.png" alt="Jest" style="margin-right: 10px; width:40px"/>
-  Jest for testing JavaScript code
-</div>
-
-<div style="display:flex; align-items:center">
   <img src="https://static-00.iconduck.com/assets.00/cypress-icon-512x512-zi8589rq.png" alt="Cypress" style="margin-right: 10px; width:40px"/>
   Cypress for end-to-end testing of the application
 </div>
@@ -70,10 +65,35 @@ To get started with the project, you will need to do the following:
 3. Run the development server by running `pnpm run dev`
 4. Visit `http://localhost:3000` in your browser to view the application
 
+You will be redirected to the login page. The login page has authentication implemtented using JWT.
+To enter the app, you have two options.
+1. When running locally, you can have ADMIN_EMAIL, ADMIN_PASSWORD set in your env file and those will be used.
+2. Use the default values
+```
+email='admin@lendsqr.com'
+password='password1234'
+```
+
 ## Usage
 
-The Login page is the starting point for the application.
-From there, you will be directed to the Dashboard page where you can view all the users. Clicking on a user will take you to the User details page. The user details will be stored in local storage or indexedDB, so you can retrieve them later. 
+The Login page is the starting point for the application.<br>
+If you already logged in before(by checking the token in your local storage),<br>
+visiting the app base route will take you to the dashboard page,<br>
+otherwise you will be redirected to the login page.<br>
+
+From there, you can click on users and go to the users route.<br>
+All the users are cached in indexedDb, and the cache is invalidated every 1 minute.<br>
+ Clicking on a user/using the action button will take you to the User details page. <br>
+The user details will also be stored indexedDB in a separate collection, and invalidated every 1 minute. 
+
+
+## Structure of the app
+- [Assets](./src/assets/README.md)
+- [Consts](./src/consts/README.md)
+- [Page Components](./src/pageComponents/README.md)
+- [Service](./src/service/README.md)
+- [Shared](./src/shared/README.md)
+- [Styles](./src/styles/README.md)
 
 ## Known Issues and Limitations
 
