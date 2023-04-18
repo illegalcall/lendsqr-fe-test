@@ -2,6 +2,7 @@ export const MOCK_API_BASE_URL =
   'https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1';
 
 export const NODE_ENV = process.env.NODE_ENV;
+console.log('🚀 ~ file: env.ts:5 ~ NODE_ENV:', NODE_ENV);
 
 export const JWT_SECRET =
   NODE_ENV === 'development' ? 'mysecret' : process.env.JWT_SECRET;
