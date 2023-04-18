@@ -16,7 +16,9 @@ const Users = () => {
 
   return (
     <div className={styles['container']}>
-      <div className={styles['title']}>Users</div>
+      <div data-cy="dashboard-container-title" className={styles['title']}>
+        Users
+      </div>
       <div className={styles['cards-container']}>
         {userDashboardCardsData.map((card, index) => (
           <Card className={styles['card']} key={index}>

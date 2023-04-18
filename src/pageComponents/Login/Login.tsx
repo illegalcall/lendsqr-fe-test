@@ -72,8 +72,16 @@ const Login = () => {
               Enter details to login.
             </div>
           </div>
-          <form className={styles['login-input']} onSubmit={(e) => mutate(e)}>
+          <form
+            data-cy="login-input-form"
+            className={styles['login-input']}
+            onSubmit={(e) => {
+              e.preventDefault();
+              mutate(e);
+            }}
+          >
             <Input
+              data-cy="login-input-form-email"
               placeholder="Email"
               type="email"
               name="email"
@@ -83,6 +91,7 @@ const Login = () => {
 
             <div className={styles['login-input__password']}>
               <Input
+                data-cy="login-input-form-password"
                 placeholder="Password"
                 type="password"
                 name="password"
@@ -96,7 +105,12 @@ const Login = () => {
             <a href="#" className={styles['forgot-password']}>
               Forgot Password?
             </a>
-            <Button fullWidth className={styles['login-btn']} type="submit">
+            <Button
+              data-cy="login-input-form-login-button"
+              fullWidth
+              className={styles['login-btn']}
+              type="submit"
+            >
               LOG IN
             </Button>
           </form>

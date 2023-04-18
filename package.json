@@ -38,6 +38,7 @@
     "@storybook/react": "^7.0.5",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jsonwebtoken": "^9.0.1",
+    "cypress": "^12.10.0",
     "eslint-plugin-storybook": "^0.6.11",
     "sass": "^1.60.0",
     "storybook": "^7.0.5"
